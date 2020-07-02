@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/magicCardFragment">
+
+    <fragment
+        android:id="@+id/magicCardFragment"
+        android:name="com.wadektech.androidsafebodacodingchallenge.ui.MagicCardFragment"
+        android:label="MagicCardFragment" >
+        <action
+            android:id="@+id/action_magicCardFragment_to_magicCardDetailsFragment"
+            app:destination="@id/magicCardDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/magicCardDetailsFragment"
+        tools:layout="@layout/fragment_magic_card_details"
+        android:name="com.wadektech.androidsafebodacodingchallenge.ui.MagicCardDetailsFragment"
+        android:label="MagicCardDetailsFragment" >
+        <argument
+            android:name="clickedCardItem"
+            app:argType="com.wadektech.androidsafebodacodingchallenge.data.MagicCard" />
+        </fragment>
+</navigation>
