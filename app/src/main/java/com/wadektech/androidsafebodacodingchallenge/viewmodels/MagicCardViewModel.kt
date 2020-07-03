@@ -54,6 +54,7 @@ class MagicCardViewModel : ViewModel() {
     init {
         getAllMagicCardsFromApi()
     }
+
     override fun onCleared() {
         super.onCleared()
         job.cancel()

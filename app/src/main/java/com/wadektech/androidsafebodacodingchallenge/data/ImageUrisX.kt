@@ -10,5 +10,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class ImageUrisX(
     @Json(name = "normal")
-    val normal: String
+    val normal: String,
+    @Json(name = "png")
+    val small: String
 ):Parcelable
