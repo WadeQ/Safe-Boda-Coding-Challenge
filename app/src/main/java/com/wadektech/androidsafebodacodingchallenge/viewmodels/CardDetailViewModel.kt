@@ -5,12 +5,13 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.wadektech.androidsafebodacodingchallenge.data.Data
+import com.wadektech.androidsafebodacodingchallenge.data.DataX
 
-class CardDetailViewModel(magicCard: Data, application: Application) : AndroidViewModel(application){
+class CardDetailViewModel(magicCard: DataX, application: Application) : AndroidViewModel(application){
 
     //details view
-    private val _selectedCard = MutableLiveData<Data>()
-    val selectedCard : LiveData<Data>
+    private val _selectedCard = MutableLiveData<DataX>()
+    val selectedCard : LiveData<DataX>
         get() = _selectedCard
 
     init {

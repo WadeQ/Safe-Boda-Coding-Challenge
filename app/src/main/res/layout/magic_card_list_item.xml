@@ -6,7 +6,7 @@
     <data>
         <variable
             name="cards"
-            type="com.wadektech.androidsafebodacodingchallenge.data.Data" />
+            type="com.wadektech.androidsafebodacodingchallenge.data.DataX" />
     </data>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
                     android:clickable="true"
-                    cardImage="@{cards.data.}"
+                    cardImage="@{cards.imageUris.normal}"
                     android:src="@drawable/sample_card"
                     android:layout_marginBottom="8dp"
                     tools:ignore="ContentDescription" />

@@ -1,10 +1,13 @@
 package com.wadektech.androidsafebodacodingchallenge.data
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Legalities(
     @Json(name = "brawl")
     val brawl: String,
@@ -32,4 +35,4 @@ data class Legalities(
     val standard: String,
     @Json(name = "vintage")
     val vintage: String
-)
+):Parcelable

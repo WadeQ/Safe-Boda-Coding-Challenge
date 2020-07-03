@@ -22,8 +22,8 @@ val retrofit: Retrofit = Retrofit.Builder()
     .build()
 
 interface MagicCardApiService{
-    @GET("cards/search?q=all")
-    fun getAllMagicCardsAsync() : Deferred<List<Data>>
+    @GET("cards/search?q=field+of+")
+    fun getAllMagicCardsAsync() : Deferred<Data>
 }
 
 object MagicCardApi{

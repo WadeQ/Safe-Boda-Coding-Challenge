@@ -1,10 +1,13 @@
 package com.wadektech.androidsafebodacodingchallenge.data
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class DataX(
     @Json(name = "cmc")
     val cmc: Double,
@@ -12,7 +15,7 @@ data class DataX(
     val imageUris: ImageUrisX,
     @Json(name = "legalities")
     val legalities: Legalities,
-    @Json(name = "loyalty")
+    @Json(name = "mana_cost")
     val manaCost: String,
     @Json(name = "name")
     val name: String,
@@ -26,4 +29,4 @@ data class DataX(
     val setName: String,
     @Json(name = "type_line")
     val typeLine: String
-)
+):Parcelable

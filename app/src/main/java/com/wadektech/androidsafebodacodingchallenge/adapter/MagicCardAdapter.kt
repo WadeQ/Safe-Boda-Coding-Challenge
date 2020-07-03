@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.wadektech.androidsafebodacodingchallenge.data.Data
+import com.wadektech.androidsafebodacodingchallenge.data.DataX
 import com.wadektech.androidsafebodacodingchallenge.databinding.MagicCardListItemBinding
 
 class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicked) :
-    ListAdapter<Data, MagicCardAdapter.ViewHolder>(ConcertsDiffUtil()) {
+    ListAdapter<DataX, MagicCardAdapter.ViewHolder>(ConcertsDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
@@ -24,7 +26,7 @@ class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicke
     class ViewHolder private constructor(private val binding: MagicCardListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(magicCard: Data, singleCardItemClicked: OnSingleCardItemClicked){
+        fun bind(magicCard: DataX, singleCardItemClicked: OnSingleCardItemClicked){
             binding.cards = magicCard
             binding.executePendingBindings()
 
@@ -41,15 +43,15 @@ class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicke
         }
     }
 
-    class OnSingleCardItemClicked(val cardItemClicked: (magicCard : Data)-> Unit) {
-        fun onSingleCardItemClicked(magicCard: Data) = cardItemClicked(magicCard)
+    class OnSingleCardItemClicked(val cardItemClicked: (magicCard : DataX)-> Unit) {
+        fun onSingleCardItemClicked(magicCard: DataX) = cardItemClicked(magicCard)
     }
 
-    class ConcertsDiffUtil : DiffUtil.ItemCallback<Data>(){
-        override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
+    class ConcertsDiffUtil : DiffUtil.ItemCallback<DataX>(){
+        override fun areItemsTheSame(oldItem: DataX, newItem: DataX): Boolean {
             return oldItem == newItem
         }
-        override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
+        override fun areContentsTheSame(oldItem: DataX, newItem: DataX): Boolean {
             return oldItem == newItem
         }
     }

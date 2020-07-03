@@ -3,7 +3,7 @@ package com.wadektech.androidsafebodacodingchallenge.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wadektech.androidsafebodacodingchallenge.data.Data
+import com.wadektech.androidsafebodacodingchallenge.data.DataX
 import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApi
 import com.wadektech.androidsafebodacodingchallenge.utils.MagicCardDownloadStatus
 import kotlinx.coroutines.CoroutineScope
@@ -20,13 +20,13 @@ class MagicCardViewModel : ViewModel() {
         get() = _status
 
      //list of cards
-    private val _response = MutableLiveData<List<Data>>()
-    val response : LiveData<List<Data>>
+    private val _response = MutableLiveData<List<DataX>>()
+    val response : LiveData<List<DataX>>
     get() = _response
 
     //navigation to details fragment
-    private val _navigateToDetailsFragment = MutableLiveData<Data>()
-    val navigateToDetailsFragment : LiveData<Data>
+    private val _navigateToDetailsFragment = MutableLiveData<DataX>()
+    val navigateToDetailsFragment : LiveData<DataX>
     get() = _navigateToDetailsFragment
 
     private var job = Job()
@@ -41,8 +41,8 @@ class MagicCardViewModel : ViewModel() {
                 val cardsList = getCardsList.await()
                 //loading successful
                 _status.value = MagicCardDownloadStatus.SUCCESS
-                _response.value = cardsList
-                Timber.d("Results are ${cardsList.size}")
+                _response.value = cardsList.data
+                Timber.d("Results are $cardsList")
             } catch (t :Throwable){
                 Timber.d("Failure due to ${t.message}")
                 //loading failure
@@ -60,7 +60,7 @@ class MagicCardViewModel : ViewModel() {
     }
 
     //display details to details fragment
-    fun displayMagicCardDetails(magicCard: Data){
+    fun displayMagicCardDetails(magicCard: DataX){
         _navigateToDetailsFragment.value = magicCard
     }
 
