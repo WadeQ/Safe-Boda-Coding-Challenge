@@ -65,7 +65,9 @@
             </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.AppBarLayout>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
             android:padding="16dp"
             app:cardCornerRadius="12dp"
@@ -87,20 +89,15 @@
                     app:cardElevation="4dp"
                     android:layout_marginBottom="16dp"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
+
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/card_image"
+                        cardImage="@{details.selectedCard.imageUris.normal}"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        cardImage="@{details.selectedCard.imageUris.normal}"
                         android:scaleType="centerCrop"
                         android:src="@drawable/sample_card" />
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="100">
 
                     <TextView
                         android:id="@id/card_name"
@@ -108,11 +105,17 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="80"
-                        android:hint="Duress"
                         android:fontFamily="@font/calibri"
+                        android:hint="Duress"
                         android:text="@{details.selectedCard.name}"
-                        android:textColor="#000000"
+                        android:textColor="@color/textColor"
                         android:textSize="22sp" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="100">
 
                     <TextView
                         android:id="@+id/tv_card_cmc"
@@ -137,14 +140,14 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/calibri"
                     android:hint="Sorcery"
+                    android:textColor="@color/textColor"
                     android:text="@{details.selectedCard.typeLine}"
                     android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="horizontal"
                     android:weightSum="100">
 
@@ -152,7 +155,6 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="100"
-                        android:gravity="center_horizontal|center_vertical"
                         android:orientation="vertical">
 
                         <TextView
@@ -162,7 +164,7 @@
                             android:fontFamily="@font/calibri"
                             android:hint="Common"
                             android:text="@{details.selectedCard.rarity}"
-                            android:textColor="#919191"
+                            android:textColor="@color/textColor"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             tools:ignore="RtlCompat" />
@@ -174,7 +176,7 @@
                             android:fontFamily="@font/calibri"
                             android:hint="Core Set 2020"
                             android:text="@{details.selectedCard.setName}"
-                            android:textColor="#919191"
+                            android:textColor="@color/textColor"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -266,28 +268,182 @@
                     android:fontFamily="@font/calibri"
                     android:hint="Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card."
                     android:text="@{details.selectedCard.oracleText}"
-                    android:textColor="#6e6e6e"
+                    android:textColor="@color/textColor"
                     android:textSize="18sp" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="#000000" />
-                <TextView
-                    android:id="@+id/tv_card_legality"
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/calibri"
-                    android:hint="standard = legal, future = legal,historic = legal"
-                    android:text="@{details.selectedCard.legalities.legacy}"
-                    android:textColor="#6e6e6e"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal" >
 
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Hour Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minute Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Hour Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minute Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Hour Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minute Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Hour Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minute Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Hour Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Minute Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/textColor"
+                        android:textColor="@color/text_color"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Second Text"
+                        android:layout_weight="1" />
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+</ScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
