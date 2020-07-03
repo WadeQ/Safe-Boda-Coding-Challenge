@@ -5,11 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.wadektech.androidsafebodacodingchallenge.data.MagicCard
 import com.wadektech.androidsafebodacodingchallenge.databinding.MagicCardListItemBinding
 
 class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicked) :
-    ListAdapter<MagicCard, MagicCardAdapter.ViewHolder>(ConcertsDiffUtil()) {
+    ListAdapter<Data, MagicCardAdapter.ViewHolder>(ConcertsDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
@@ -25,7 +24,7 @@ class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicke
     class ViewHolder private constructor(private val binding: MagicCardListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(magicCard: MagicCard, singleCardItemClicked: OnSingleCardItemClicked){
+        fun bind(magicCard: Data, singleCardItemClicked: OnSingleCardItemClicked){
             binding.cards = magicCard
             binding.executePendingBindings()
 
@@ -42,15 +41,15 @@ class MagicCardAdapter(private var singleCardItemClicked: OnSingleCardItemClicke
         }
     }
 
-    class OnSingleCardItemClicked(val cardItemClicked: (magicCard : MagicCard)-> Unit) {
-        fun onSingleCardItemClicked(magicCard: MagicCard) = cardItemClicked(magicCard)
+    class OnSingleCardItemClicked(val cardItemClicked: (magicCard : Data)-> Unit) {
+        fun onSingleCardItemClicked(magicCard: Data) = cardItemClicked(magicCard)
     }
 
-    class ConcertsDiffUtil : DiffUtil.ItemCallback<MagicCard>(){
-        override fun areItemsTheSame(oldItem: MagicCard, newItem: MagicCard): Boolean {
+    class ConcertsDiffUtil : DiffUtil.ItemCallback<Data>(){
+        override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
             return oldItem == newItem
         }
-        override fun areContentsTheSame(oldItem: MagicCard, newItem: MagicCard): Boolean {
+        override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
             return oldItem == newItem
         }
     }

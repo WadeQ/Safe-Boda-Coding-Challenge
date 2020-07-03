@@ -3,12 +3,11 @@ package com.wadektech.androidsafebodacodingchallenge.network
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import com.wadektech.androidsafebodacodingchallenge.data.MagicCard
+import com.wadektech.androidsafebodacodingchallenge.data.Data
 import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.scryfall.com/"
 
@@ -23,8 +22,8 @@ val retrofit: Retrofit = Retrofit.Builder()
     .build()
 
 interface MagicCardApiService{
-    @GET("cards/search?q=field+of+")
-    fun getAllMagicCardsAsync(@Query("q") type:String) : Deferred<List<MagicCard>>
+    @GET("cards/search?q=all")
+    fun getAllMagicCardsAsync() : Deferred<List<Data>>
 }
 
 object MagicCardApi{

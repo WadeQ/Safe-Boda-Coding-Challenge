@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.wadektech.androidsafebodacodingchallenge.R
 import com.wadektech.androidsafebodacodingchallenge.adapter.MagicCardAdapter
-import com.wadektech.androidsafebodacodingchallenge.data.MagicCard
+import com.wadektech.androidsafebodacodingchallenge.data.Data
 import timber.log.Timber
 
 
@@ -31,7 +31,7 @@ fun apiResponseStatus(imageView: AppCompatImageView, status: MagicCardDownloadSt
 }
 
 @BindingAdapter("cardsBindingAdapter")
-fun bindCardsAdapter(recyclerView: RecyclerView, magicCardList:  List<MagicCard>?){
+fun bindCardsAdapter(recyclerView: RecyclerView, magicCardList:  List<Data>?){
     val adapter = recyclerView.adapter as MagicCardAdapter
     Timber.d("binding adapter list size is: ${magicCardList?.size}")
     adapter.submitList(magicCardList)

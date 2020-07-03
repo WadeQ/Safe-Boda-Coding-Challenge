@@ -52,7 +52,6 @@ class MagicCardFragment : Fragment() {
             }
         })
 
-
         return binding.root
     }
 }

@@ -22,9 +22,10 @@ class MagicCardDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val application = requireNotNull(activity).application
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_magic_card_details, container, false)
         binding.lifecycleOwner = this
+
+        val application = requireNotNull(activity).application
         val magicCardDetailsFragmentArgs = MagicCardDetailsFragmentArgs.fromBundle(requireArguments()).clickedCardItem
         val factory = MagicCardViewModelFactory(application, magicCardDetailsFragmentArgs)
         binding.details = ViewModelProvider(this,factory).get(CardDetailViewModel::class.java)

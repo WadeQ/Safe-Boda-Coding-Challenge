@@ -92,7 +92,7 @@
                         android:id="@+id/card_image"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        cardImage="@{details.selectedCard.data.}"
+                        cardImage="@{details.selectedCard.imageUris.normal}"
                         android:scaleType="centerCrop"
                         android:src="@drawable/sample_card" />
                 </androidx.cardview.widget.CardView>
@@ -108,8 +108,9 @@
                         android:layout_height="match_parent"
                         android:layout_gravity="center"
                         android:layout_weight="80"
+                        android:hint="Duress"
                         android:fontFamily="@font/calibri"
-                        android:text="Duress"
+                        android:text="@{details.selectedCard.name}"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -120,7 +121,8 @@
                         android:layout_weight="20"
                         android:fontFamily="@font/calibri"
                         android:gravity="center"
-                        android:text="1.0"
+                        android:hint="0.5"
+                        android:text="@{String.valueOf(details.selectedCard.cmc)}"
                         android:textAlignment="textEnd"
                         android:textColor="#df6a73"
                         android:textSize="20sp"
@@ -134,7 +136,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/calibri"
-                    android:text="Sorcery"
+                    android:hint="Sorcery"
+                    android:text="@{details.selectedCard.typeLine}"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -157,7 +160,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/calibri"
-                            android:text="common"
+                            android:hint="Common"
+                            android:text="@{details.selectedCard.rarity}"
                             android:textColor="#919191"
                             android:textSize="14sp"
                             android:textStyle="bold"
@@ -168,7 +172,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/calibri"
-                            android:text="Core Set 2020"
+                            android:hint="Core Set 2020"
+                            android:text="@{details.selectedCard.setName}"
                             android:textColor="#919191"
                             android:textSize="14sp" />
 
@@ -200,7 +205,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/calibri"
-                            android:text="{B}"
+                            android:hint="B"
+                            android:text="@{details.selectedCard.manaCost}"
                             android:textAlignment="center"
                             android:textSize="18sp"
                             android:textStyle="bold"
@@ -225,7 +231,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/calibri"
-                            android:text="2019-07-12"
+                            android:hint="2019-07-12"
+                            android:text="@{details.selectedCard.releasedAt}"
                             android:textAlignment="center"
                             android:textColor="#df6a73"
                             android:textSize="18sp"
@@ -257,7 +264,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/calibri"
-                    android:text="Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card."
+                    android:hint="Target opponent reveals their hand. You choose a noncreature, nonland card from it. That player discards that card."
+                    android:text="@{details.selectedCard.oracleText}"
                     android:textColor="#6e6e6e"
                     android:textSize="18sp" />
 
@@ -274,7 +282,8 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/calibri"
-                    android:text="standard = legal, future = legal,historic = legal"
+                    android:hint="standard = legal, future = legal,historic = legal"
+                    android:text="@{details.selectedCard.legalities.legacy}"
                     android:textColor="#6e6e6e"
                     android:textSize="18sp" />
 

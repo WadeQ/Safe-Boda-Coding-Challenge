@@ -3,7 +3,7 @@ package com.wadektech.androidsafebodacodingchallenge.viewmodels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.wadektech.androidsafebodacodingchallenge.data.MagicCard
+import com.wadektech.androidsafebodacodingchallenge.data.Data
 import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApi
 import com.wadektech.androidsafebodacodingchallenge.utils.MagicCardDownloadStatus
 import kotlinx.coroutines.CoroutineScope
@@ -20,21 +20,21 @@ class MagicCardViewModel : ViewModel() {
         get() = _status
 
      //list of cards
-    private val _response = MutableLiveData<List<MagicCard>>()
-    val response : LiveData<List<MagicCard>>
+    private val _response = MutableLiveData<List<Data>>()
+    val response : LiveData<List<Data>>
     get() = _response
 
     //navigation to details fragment
-    private val _navigateToDetailsFragment = MutableLiveData<MagicCard>()
-    val navigateToDetailsFragment : LiveData<MagicCard>
+    private val _navigateToDetailsFragment = MutableLiveData<Data>()
+    val navigateToDetailsFragment : LiveData<Data>
     get() = _navigateToDetailsFragment
 
     private var job = Job()
     private val _coroutineScope = CoroutineScope(job + Dispatchers.Main)
 
-    private fun getAllMagicCardsFromApi(filter : String){
+    private fun getAllMagicCardsFromApi(){
         _coroutineScope.launch {
-            val getCardsList = MagicCardApi.retrofitService.getAllMagicCardsAsync(filter)
+            val getCardsList = MagicCardApi.retrofitService.getAllMagicCardsAsync()
             try {
                 //status loading
                 _status.value = MagicCardDownloadStatus.LOADING
@@ -47,13 +47,12 @@ class MagicCardViewModel : ViewModel() {
                 Timber.d("Failure due to ${t.message}")
                 //loading failure
                 _status.value = MagicCardDownloadStatus.ERROR
-                _response.value = ArrayList()
             }
         }
     }
 
     init {
-        getAllMagicCardsFromApi("duress")
+        getAllMagicCardsFromApi()
     }
     override fun onCleared() {
         super.onCleared()
@@ -61,7 +60,7 @@ class MagicCardViewModel : ViewModel() {
     }
 
     //display details to details fragment
-    fun displayMagicCardDetails(magicCard: MagicCard){
+    fun displayMagicCardDetails(magicCard: Data){
         _navigateToDetailsFragment.value = magicCard
     }
 
@@ -71,6 +70,6 @@ class MagicCardViewModel : ViewModel() {
     }
     //filter method to get cards by name
     fun filterThroughCards(filter: String){
-        getAllMagicCardsFromApi(filter)
+        getAllMagicCardsFromApi()
     }
 }

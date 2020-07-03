@@ -5,7 +5,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class MagicCard(
-    @Json(name = "data")
-    val `data`: List<Data>
+data class ImageUrisX(
+    @Json(name = "normal")
+    val normal: String
 )

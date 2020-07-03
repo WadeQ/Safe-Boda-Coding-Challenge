@@ -21,6 +21,6 @@
         android:label="MagicCardDetailsFragment" >
         <argument
             android:name="clickedCardItem"
-            app:argType="com.wadektech.androidsafebodacodingchallenge.data.MagicCard" />
+            app:argType="com.wadektech.androidsafebodacodingchallenge.data.Data" />
         </fragment>
 </navigation>
