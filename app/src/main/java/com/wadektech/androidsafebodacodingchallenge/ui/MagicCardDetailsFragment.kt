@@ -29,10 +29,7 @@ class MagicCardDetailsFragment : Fragment() {
         val magicCardDetailsFragmentArgs = MagicCardDetailsFragmentArgs.fromBundle(requireArguments()).clickedCardItem
         val factory = MagicCardViewModelFactory(application, magicCardDetailsFragmentArgs)
         binding.details = ViewModelProvider(this,factory).get(CardDetailViewModel::class.java)
-        binding.navBack.setOnClickListener {
-            val intent = Intent(activity, MainActivity::class.java)
-            startActivity(intent)
-        }
+
         return binding.root
 
     }

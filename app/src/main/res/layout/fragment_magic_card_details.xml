@@ -16,55 +16,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="7dp"
-            android:background="@null"
-            android:theme="@style/AppTheme.AppBarOverlay"
-            app:elevation="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/products_recycler"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:theme="@style/AppTheme.Toolbar">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/nav_back"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/ic_arrow_back_black_24dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginLeft="50dp"
-                        android:fontFamily="@font/calibri"
-                        android:text="Magic Card Details"
-                        android:textColor="#000000"
-                        android:textSize="20sp"
-                        tools:ignore="RtlHardcoded" />
-
-                </RelativeLayout>
-
-            </androidx.appcompat.widget.Toolbar>
-
-        </com.google.android.material.appbar.AppBarLayout>
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -93,29 +44,29 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/card_image"
-                        cardImage="@{details.selectedCard.imageUris.normal}"
+                        cardImage="@{details.selectedCard.imageUris.small}"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:scaleType="centerCrop"
                         android:src="@drawable/sample_card" />
 
-                    <TextView
-                        android:id="@id/card_name"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_weight="80"
-                        android:fontFamily="@font/calibri"
-                        android:hint="Duress"
-                        android:text="@{details.selectedCard.name}"
-                        android:textColor="@color/textColor"
-                        android:textSize="22sp" />
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="100">
+                    <TextView
+                        android:id="@id/card_name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="50"
+                        android:fontFamily="@font/calibri"
+                        android:hint="Duress"
+                        android:text="@{details.selectedCard.name}"
+                        android:textColor="@color/textColor"
+                        android:textSize="22sp" />
 
                     <TextView
                         android:id="@+id/tv_card_cmc"
@@ -288,6 +239,7 @@
                         android:layout_weight="1"
                         android:background="@color/textColor"
                         android:gravity="center"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:text="LEGAL"
                         android:textColor="@color/text_color" />
@@ -299,6 +251,7 @@
                         android:textColor="@color/textColor"
                         android:gravity="center"
                         android:padding="4dp"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.commander}" />
 
                     <TextView
@@ -308,6 +261,7 @@
                         android:textColor="@color/text_color"
                         android:padding="4dp"
                         android:gravity="center"
+                        android:textSize="18sp"
                         android:text="LEGAL"
                         android:layout_weight="1" />
 
@@ -315,6 +269,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.brawl}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -331,6 +286,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -340,6 +296,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.duel}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -350,6 +307,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -359,6 +317,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.future}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -375,6 +334,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -384,6 +344,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.historic}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -394,6 +355,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -403,6 +365,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.modern}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -419,6 +382,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -428,6 +392,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.modern}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -438,6 +403,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -447,6 +413,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.oldschool}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -463,6 +430,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -472,6 +440,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.oldschool}"
                         android:padding="4dp"
                         android:gravity="center"
@@ -482,6 +451,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
+                        android:textSize="18sp"
                         android:padding="4dp"
                         android:gravity="center"
                         android:text="LEGAL"
@@ -491,6 +461,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:textColor="@color/textColor"
+                        android:textSize="18sp"
                         android:text="@{details.selectedCard.legalities.pauper}"
                         android:padding="4dp"
                         android:gravity="center"

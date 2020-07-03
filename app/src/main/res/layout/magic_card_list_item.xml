@@ -38,7 +38,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:clickable="true"
-                    cardImage="@{cards.imageUris.normal}"
+                    cardImage="@{cards.imageUris.small}"
                     android:src="@drawable/sample_card"
                     android:layout_marginBottom="8dp"
                     tools:ignore="ContentDescription" />
