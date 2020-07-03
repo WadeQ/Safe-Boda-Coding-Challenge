@@ -285,34 +285,45 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/textColor"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="LEGAL"
+                        android:textColor="@color/text_color" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/textColor"
+                        android:gravity="center"
+                        android:padding="4dp"
+                        android:text="@{details.selectedCard.legalities.commander}" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Hour Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Minute Text"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:background="@color/textColor"
-                        android:textColor="@color/text_color"
-                        android:text="Second Text"
-                        android:layout_weight="1" />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Second Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.brawl}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -320,13 +331,18 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Hour Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Minute Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.duel}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
 
                     <TextView
@@ -334,18 +350,24 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Second Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Second Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.future}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -353,13 +375,18 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Hour Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Minute Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.historic}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
 
                     <TextView
@@ -367,18 +394,24 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Second Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Second Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.modern}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -386,13 +419,18 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Hour Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Minute Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.modern}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
 
                     <TextView
@@ -400,18 +438,24 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Second Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Second Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.oldschool}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:orientation="horizontal" >
 
                     <TextView
@@ -419,13 +463,18 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Hour Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Minute Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.oldschool}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
 
                     <TextView
@@ -433,13 +482,18 @@
                         android:layout_height="wrap_content"
                         android:background="@color/textColor"
                         android:textColor="@color/text_color"
-                        android:text="Second Text"
+                        android:padding="4dp"
+                        android:gravity="center"
+                        android:text="LEGAL"
                         android:layout_weight="1" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Second Text"
+                        android:textColor="@color/textColor"
+                        android:text="@{details.selectedCard.legalities.pauper}"
+                        android:padding="4dp"
+                        android:gravity="center"
                         android:layout_weight="1" />
                 </LinearLayout>
             </LinearLayout>
