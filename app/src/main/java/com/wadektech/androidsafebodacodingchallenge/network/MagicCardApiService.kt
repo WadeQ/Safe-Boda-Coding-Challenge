@@ -8,9 +8,12 @@ import kotlinx.coroutines.Deferred
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://api.scryfall.com/"
-
+enum class MagicCardApiFilter(val value : String){
+ DISPLAY_TEN("field+of+")
+}
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
@@ -22,9 +25,13 @@ val retrofit: Retrofit = Retrofit.Builder()
     .build()
 
 interface MagicCardApiService{
-    @GET("cards/search?q=field+of+")
+    @GET("/cards/search?q=field+of+")
     fun getAllMagicCardsAsync() : Deferred<Data>
+
+    @GET("/cards/search?q=field+of+")
+    fun getSingleMagicCardsAsync(@Query("q") type : String) : Deferred<Data>
 }
+
 
 object MagicCardApi{
     val retrofitService :MagicCardApiService by lazy {

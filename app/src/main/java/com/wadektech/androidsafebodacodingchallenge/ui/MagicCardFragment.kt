@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -42,6 +43,20 @@ class MagicCardFragment : Fragment() {
             if (it!=null){
                 this.findNavController().navigate(MagicCardFragmentDirections.actionMagicCardFragmentToMagicCardDetailsFragment(it))
                 magicCardViewModel.displayMagicCardDetailsCompleted()
+            }
+        })
+
+        val search = binding.cardSearch
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    magicCardViewModel.filterThroughCards(query)
+                }
+                return false
+            }
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
             }
         })
 
