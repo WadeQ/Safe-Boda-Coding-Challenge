@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wadektech.androidsafebodacodingchallenge.data.DataX
 import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApi
-import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApiFilter
 import com.wadektech.androidsafebodacodingchallenge.utils.MagicCardDownloadStatus
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -35,6 +34,7 @@ class MagicCardViewModel : ViewModel() {
 
     private fun getAllMagicCardsFromApi(){
         _coroutineScope.launch {
+            //fetch data async without using callbacks or subscribers
             val getCardsList = MagicCardApi.retrofitService.getAllMagicCardsAsync()
             try {
                 //status loading
@@ -68,8 +68,8 @@ class MagicCardViewModel : ViewModel() {
                 Timber.d("Failure due to ${t.message}")
                 //loading failure
                 _status.value = MagicCardDownloadStatus.ERROR
+                _response.value = ArrayList()
             }
-
         }
     }
 
@@ -77,7 +77,7 @@ class MagicCardViewModel : ViewModel() {
         getAllMagicCardsFromApi()
         getSearchedApiResponse("")
     }
-
+    //cancel job when oncleared is called
     override fun onCleared() {
         super.onCleared()
         job.cancel()
@@ -92,6 +92,7 @@ class MagicCardViewModel : ViewModel() {
     fun displayMagicCardDetailsCompleted(){
         _navigateToDetailsFragment.value = null
     }
+
     //filter method to get cards by name
     fun filterThroughCards(filter: String){
         getSearchedApiResponse(filter)

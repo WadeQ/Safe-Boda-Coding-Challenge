@@ -11,6 +11,8 @@ import kotlinx.android.parcel.Parcelize
 data class DataX(
     @Json(name = "cmc")
     val cmc: Double,
+    @Json(name = "rarity")
+    val rarity: String,
     @Json(name = "image_uris")
     val imageUris: ImageUrisX,
     @Json(name = "legalities")
@@ -21,8 +23,6 @@ data class DataX(
     val name: String,
     @Json(name = "oracle_text")
     val oracleText: String,
-    @Json(name = "rarity")
-    val rarity: String,
     @Json(name = "released_at")
     val releasedAt: String,
     @Json(name = "set_name")
