@@ -55,8 +55,8 @@ class TestApiService {
     fun testCompleteIntegration() = runBlocking { // that will allow to wait for coroutine
         mockWebServer.enqueue(
             MockResponse()
-            .setResponseCode(HttpURLConnection.HTTP_OK)
-            .setBody("""{
+                .setResponseCode(HttpURLConnection.HTTP_OK)
+                .setBody("""{
                     "object": "list",
                     "total_cards": 10,
                     "has_more": false,
