@@ -10,7 +10,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 class MagicCardApiServiceTest {
 
-    lateinit var magicCardApiService: MagicCardApiService
+    private var magicCardApiService: MagicCardApiService?=null
 
     @BeforeEach
     internal fun setUp() {
@@ -26,8 +26,8 @@ class MagicCardApiServiceTest {
     @Test
     internal fun should_callServiceWithCoroutine() {
         runBlocking {
-            val cards = magicCardApiService.getAllMagicCardsAsync().await()
-            cards.data.forEach(::println)
+            val cards = magicCardApiService?.getAllMagicCardsAsync()?.await()
+            cards?.data?.forEach(::println)
         }
     }
 }

@@ -24,7 +24,7 @@ val retrofit: Retrofit = Retrofit.Builder()
 
 interface MagicCardApiService{
     @GET("/cards/search?q=field+of+")
-    fun getAllMagicCardsAsync() : Deferred<Data>
+    suspend fun getAllMagicCardsAsync() : Deferred<Data>
 
     @GET("/cards/search?q=field+of+")
     fun getSingleMagicCardsAsync(@Query("q") type : String) : Deferred<Data>

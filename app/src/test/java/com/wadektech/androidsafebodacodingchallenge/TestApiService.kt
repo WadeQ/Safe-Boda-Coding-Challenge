@@ -6,6 +6,7 @@ import com.wadektech.androidsafebodacodingchallenge.data.DataX
 import com.wadektech.androidsafebodacodingchallenge.data.ImageUrisX
 import com.wadektech.androidsafebodacodingchallenge.data.Legalities
 import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApiService
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.runBlocking
 import org.amshove.kluent.shouldEqual
 import org.junit.jupiter.api.BeforeEach
@@ -24,9 +25,9 @@ class TestApiService {
     lateinit var magicCardApiService: MagicCardApiService
 
     @BeforeEach
-    internal fun setUp() {
+    internal suspend fun setUp() {
         MockitoAnnotations.initMocks(this)
-        whenever(magicCardApiService.getAllMagicCardsAsync()).thenReturn()
+        whenever(magicCardApiService.getAllMagicCardsAsync()).getMock<Deferred<Data>>()
 
     }
 
