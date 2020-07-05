@@ -2,9 +2,11 @@ package com.wadektech.androidsafebodacodingchallenge
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.wadektech.androidsafebodacodingchallenge.network.MagicCardApiService
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.jupiter.api.BeforeEach
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
